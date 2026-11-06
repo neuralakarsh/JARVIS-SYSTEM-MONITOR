@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050b18;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    padding: 35px 15px;
+    background: #0b1730;
+    border-bottom: 2px solid #00d9ff;
+    box-shadow: 0 0 20px #00d9ff55;
+}
+
+.header h1 {
+    color: #00e5ff;
+    font-size: 42px;
+    letter-spacing: 8px;
+}
+
+.header p {
+    color: #8ca9c9;
+    margin-top: 10px;
+    letter-spacing: 4px;
+}
+
+#connection-status {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00ff99;
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.monitor-card {
+    background: #0d1b33;
+    border: 1px solid #00bfff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 170px;
+    box-shadow: 0 0 15px #007bff33;
+    transition: 0.3s;
+}
+
+.monitor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #00d9ff88;
+}
+
+.monitor-card h2 {
+    color: #00d9ff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.monitor-card p {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#gpu-temperature,
+#download-value,
+#upload-value {
+    font-size: 15px;
+    color: #a9c7e8;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #6684a8;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .dashboard {
+        width: 92%;
+    }
+}

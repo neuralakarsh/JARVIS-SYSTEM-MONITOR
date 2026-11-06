@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS System Monitor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>J.A.R.V.I.S.</h1>
+        <p> SYSTEM MONITOR V1</p>
+        <span id="connection-status">Connecting...</span>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="monitor-card">
+            <h2>CPU Usage</h2>
+            <p id="cpu-value">--%</p>
+        </section>
+
+        <section class="monitor-card">
+            <h2>RAM Usage</h2>
+            <p id="ram-value">--%</p>
+        </section>
+
+        <section class="monitor-card">
+            <h2>GPU Usage</h2>
+            <p id="gpu-value">--%</p>
+            <p id="gpu-temperature">Temperature: -- °C</p>
+        </section>
+
+        <section class="monitor-card">
+            <h2>Disk Usage</h2>
+            <p id="disk-value">--%</p>
+        </section>
+
+        <section class="monitor-card">
+            <h2>Network</h2>
+            <p id="network-status">Checking...</p>
+            <p id="download-value">Download: -- MB</p>
+            <p id="upload-value">Upload: -- MB</p>
+        </section>
+
+        <section class="monitor-card">
+            <h2>System Uptime</h2>
+            <p id="uptime-value">--</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>JARVIS SYSTEM MONITOR | LOCAL DASHBOARD</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
