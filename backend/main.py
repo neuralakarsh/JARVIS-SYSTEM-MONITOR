@@ -8,7 +8,8 @@ from backend.monitor import (
 )
 from backend.network_monitor import (
     get_network_usage,
-    get_network_status
+    get_network_status,
+    get_network_speed
 )
 from backend.gpu_monitor import get_gpu_info
 
@@ -51,9 +52,9 @@ def disk():
 def network():
     return {
         "usage": get_network_usage(),
-        "status": get_network_status()
+        "status": get_network_status(),
+        "speed": get_network_speed()
     }
-
 
 @app.get("/api/gpu")
 def gpu():
