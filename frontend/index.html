@@ -10,30 +10,68 @@
 
 <body>
 
+<!-- JARVIS V3.2 - BOOT SCREEN -->
+<div id="jarvis-boot">
+    <div class="boot-ring"></div>
+    <h1>J.A.R.V.I.S.</h1>
+    <p id="boot-message">INITIALIZING SYSTEM...</p>
+    <div class="boot-progress">
+        <div id="boot-progress-bar"></div>
+    </div>
+    <p class="boot-percent" id="boot-percent">0%</p>
+</div>
+
     <header class="header">
         <h1>J.A.R.V.I.S.</h1>
         <p> SYSTEM MONITOR V1</p>
         <span id="connection-status">Connecting...</span>
     </header>
 
+<!-- JARVIS V3.3 - ARC REACTOR -->
+<section class="arc-reactor-section">
+    <div class="arc-reactor">
+        <div class="reactor-ring ring-one"></div>
+        <div class="reactor-ring ring-two"></div>
+        <div class="reactor-ring ring-three"></div>
+        <div class="reactor-core">
+            <span>J</span>
+        </div>
+    </div>
+    <h2>ARC REACTOR ONLINE</h2>
+    <p>STARK TECHNOLOGY SYSTEM ACTIVE</p>
+</section>
+
     <main class="dashboard">
 
-        <section class="monitor-card">
-            <h2>CPU Usage</h2>
-            <p id="cpu-value">--%</p>
-        </section>
+        
+<section class="monitor-card">
+    <h2>CPU Usage</h2>
+    <p id="cpu-value">--%</p>
+    <div class="holo-meter">
+        <div id="cpu-meter" class="holo-fill"></div>
+    </div>
+    <small>PROCESSOR LOAD</small>
+</section>
 
-        <section class="monitor-card">
-            <h2>RAM Usage</h2>
-            <p id="ram-value">--%</p>
-        </section>
-
-        <section class="monitor-card">
-            <h2>GPU Usage</h2>
-            <p id="gpu-value">--%</p>
-            <p id="gpu-temperature">Temperature: -- °C</p>
-        </section>
-
+      
+<section class="monitor-card">
+    <h2>RAM Usage</h2>
+    <p id="ram-value">--%</p>
+    <div class="holo-meter">
+        <div id="ram-meter" class="holo-fill"></div>
+    </div>
+    <small>MEMORY LOAD</small>
+</section>
+       
+<section class="monitor-card">
+    <h2>GPU Usage</h2>
+    <p id="gpu-value">--%</p>
+    <div class="holo-meter">
+        <div id="gpu-meter" class="holo-fill"></div>
+    </div>
+    <p id="gpu-temperature">Temperature: -- °C</p>
+    <small>GRAPHICS LOAD</small>
+</section>
         <section class="monitor-card">
             <h2>Disk Usage</h2>
             <p id="disk-value">--%</p>
@@ -42,6 +80,12 @@
         <section class="monitor-card">
             <h2>Network</h2>
             <p id="network-status">Checking...</p>
+
+<div class="network-activity">
+    <span id="network-activity-dot"></span>
+    <span id="network-activity-text">Checking Activity...</span>
+</div>
+
             <p id="download-value">Download: -- MB</p>
             <p id="upload-value">Upload: -- MB</p>
         </section>
@@ -52,11 +96,51 @@
         </section>
 
     </main>
+<section class="monitor-card graph-card">
+    <h2>CPU Live Graph</h2>
+    <canvas id="cpu-chart"></canvas>
+</section>
 
+<section class="monitor-card graph-card">
+    <h2>RAM Live Graph</h2>
+    <canvas id="ram-chart"></canvas>
+</section>
+
+<section class="monitor-card graph-card">
+    <h2>GPU Live Graph</h2>
+    <canvas id="gpu-chart"></canvas>
+</section>
     <footer>
         <p>JARVIS SYSTEM MONITOR | LOCAL DASHBOARD</p>
-    </footer>
+<!-- JARVIS V2.2 - Network Monitor -->
 
+<section class="monitor-card">
+    <h2>Download Speed</h2>
+    <h1 id="download-speed">0.00 Mbps</h1>
+</section>
+
+<section class="monitor-card">
+    <h2>Upload Speed</h2>
+    <h1 id="upload-speed">0.00 Mbps</h1>
+</section>
+<section class="monitor-card graph-card">
+    <h2>Network Download Speed</h2>
+    <canvas id="download-chart"></canvas>
+</section>
+
+<section class="monitor-card graph-card">
+    <h2>Network Upload Speed</h2>
+    <canvas id="upload-chart"></canvas>
+</section>
+<!-- JARVIS V2.4 - Internet Connection Status -->
+
+<section class="monitor-card">
+    <h2>Internet Connection Status</h2>
+    <h1 id="internet-status">Checking...</h1>
+    <p id="network-interfaces">Checking network interfaces...</p>
+</section>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 
 </body>

@@ -97,3 +97,512 @@ footer {
         width: 92%;
     }
 }
+
+/* JARVIS V2.1 - Professional Graph Cards */
+
+.graph-card {
+    min-height: 300px;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 18px;
+}
+
+.graph-card h2 {
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+.graph-card canvas {
+    width: 100% !important;
+    max-height: 220px;
+}
+
+/* ==================================
+   JARVIS V3.1 - IRON MAN PREMIUM HUD
+================================== */
+
+:root {
+    --jarvis-cyan: #00eaff;
+    --jarvis-blue: #087cff;
+    --jarvis-glow: rgba(0, 234, 255, 0.35);
+    --jarvis-bg: #020712;
+    --jarvis-panel: rgba(5, 25, 48, 0.82);
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 50% 0%, #102b4c 0%, transparent 55%),
+        linear-gradient(135deg, #020712, #061326, #020712);
+    background-attachment: fixed;
+    font-family: "Segoe UI", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* HUD background grid */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(0, 234, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 234, 255, 0.035) 1px, transparent 1px);
+    background-size: 35px 35px;
+}
+
+/* Premium Header */
+.header {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(120deg, #06172e, #0a2340, #06172e);
+    border-bottom: 1px solid var(--jarvis-cyan);
+    box-shadow: 0 5px 35px var(--jarvis-glow);
+}
+
+.header h1 {
+    color: var(--jarvis-cyan);
+    text-shadow:
+        0 0 8px var(--jarvis-cyan),
+        0 0 25px #008cff;
+    animation: jarvisPulse 3s ease-in-out infinite;
+}
+
+.header p {
+    color: #8bdcff;
+}
+
+/* Premium Monitor Cards */
+.monitor-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        rgba(9, 34, 61, 0.95),
+        rgba(3, 14, 30, 0.96)
+    );
+    border: 1px solid rgba(0, 234, 255, 0.5);
+    border-radius: 15px;
+    box-shadow:
+        inset 0 0 20px rgba(0, 145, 255, 0.08),
+        0 0 15px rgba(0, 145, 255, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.monitor-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--jarvis-cyan),
+        transparent
+    );
+    animation: hudScan 5s linear infinite;
+}
+
+.monitor-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--jarvis-cyan);
+    box-shadow:
+        0 0 15px var(--jarvis-glow),
+        0 0 35px rgba(0, 145, 255, 0.18);
+}
+
+.monitor-card h2 {
+    color: var(--jarvis-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.45);
+    letter-spacing: 1.5px;
+}
+
+.monitor-card h1,
+.monitor-card p {
+    text-shadow: 0 0 12px rgba(0, 234, 255, 0.2);
+}
+
+/* Live Graph Panels */
+.graph-card {
+    background: rgba(4, 19, 38, 0.94);
+    border: 1px solid rgba(0, 234, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 145, 255, 0.12);
+}
+
+/* Online Status Glow */
+#connection-status {
+    text-shadow: 0 0 10px #00ff99;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(0, 234, 255, 0.3);
+    background: rgba(2, 8, 19, 0.8);
+    letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes jarvisPulse {
+    0%, 100% {
+        text-shadow: 0 0 8px #00eaff, 0 0 20px #008cff;
+    }
+    50% {
+        text-shadow: 0 0 18px #00eaff, 0 0 40px #008cff;
+    }
+}
+
+@keyframes hudScan {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =================================
+   JARVIS V3.2 - CINEMATIC BOOT SCREEN
+================================= */
+
+#jarvis-boot {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: radial-gradient(circle, #102b4c, #020712 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #00eaff;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#jarvis-boot h1 {
+    font-size: 48px;
+    letter-spacing: 12px;
+    text-shadow: 0 0 15px #00eaff, 0 0 35px #087cff;
+    animation: bootGlow 2s infinite alternate;
+    z-index: 1;
+}
+
+#boot-message {
+    margin-top: 20px;
+    letter-spacing: 4px;
+    color: #9cecff;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.boot-ring {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 2px solid transparent;
+    border-top-color: #00eaff;
+    border-bottom-color: #087cff;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #00eaff55;
+    animation: bootRotate 3s linear infinite;
+}
+
+.boot-progress {
+    width: 260px;
+    height: 5px;
+    background: #16324f;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#boot-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #00eaff;
+    box-shadow: 0 0 15px #00eaff;
+}
+
+.boot-percent {
+    margin-top: 12px;
+    color: #00eaff;
+    z-index: 1;
+}
+
+#jarvis-boot.boot-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@keyframes bootRotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bootGlow {
+    from { text-shadow: 0 0 10px #00eaff; }
+    to { text-shadow: 0 0 30px #00eaff, 0 0 50px #087cff; }
+}
+
+/* =================================
+   JARVIS V3.3 - ARC REACTOR HUD
+================================= */
+
+.arc-reactor-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 20px 35px;
+    text-align: center;
+    position: relative;
+}
+
+.arc-reactor {
+    width: 190px;
+    height: 190px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle, #07345a, #020712 70%);
+    box-shadow:
+        0 0 25px #00eaff66,
+        0 0 65px #087cff33,
+        inset 0 0 25px #00eaff44;
+}
+
+.reactor-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.ring-one {
+    inset: 0;
+    border-top-color: #00eaff;
+    border-bottom-color: #00eaff;
+    animation: reactorSpin 4s linear infinite;
+}
+
+.ring-two {
+    inset: 14px;
+    border-left-color: #087cff;
+    border-right-color: #087cff;
+    animation: reactorSpinReverse 3s linear infinite;
+}
+
+.ring-three {
+    inset: 28px;
+    border-top-color: #8beeff;
+    border-right-color: #8beeff;
+    animation: reactorSpin 2s linear infinite;
+}
+
+.reactor-core {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #bafaff, #00cfff 45%, #0755a0);
+    box-shadow: 0 0 25px #00eaff, 0 0 55px #087cff;
+    animation: reactorPulse 2s ease-in-out infinite;
+}
+
+.reactor-core span {
+    color: #00203b;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.arc-reactor-section h2 {
+    color: #00eaff;
+    margin-top: 28px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #00eaff;
+}
+
+.arc-reactor-section p {
+    color: #8bdcff;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+@keyframes reactorSpin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes reactorSpinReverse {
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes reactorPulse {
+    0%, 100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 20px #00eaff;
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 45px #00eaff, 0 0 70px #087cff;
+    }
+}
+
+/* JARVIS V3.4 - REACTOR POWER UPGRADE */
+
+.arc-reactor {
+    width: 260px;
+    height: 260px;
+    background:
+        radial-gradient(circle, #0b4568 0%, #03182b 48%, #020712 72%);
+    box-shadow:
+        0 0 30px #00eaff88,
+        0 0 80px #008cff55,
+        0 0 140px #00eaff22,
+        inset 0 0 45px #00cfff66;
+}
+
+.ring-one {
+    inset: -5px;
+    border-width: 4px;
+    border-top-color: #00f6ff;
+    border-bottom-color: #00f6ff;
+    filter: drop-shadow(0 0 10px #00eaff);
+    animation-duration: 5s;
+}
+
+.ring-two {
+    inset: 18px;
+    border-width: 4px;
+    filter: drop-shadow(0 0 8px #087cff);
+    animation-duration: 2.5s;
+}
+
+.ring-three {
+    inset: 38px;
+    border-width: 3px;
+    animation-duration: 3s;
+}
+
+.reactor-core {
+    width: 110px;
+    height: 110px;
+    background:
+        radial-gradient(circle, #ffffff 0%, #8dfaff 18%, #00cfff 48%, #0755a0 100%);
+    box-shadow:
+        0 0 25px #00eaff,
+        0 0 55px #00eaff,
+        0 0 100px #087cff;
+    animation: reactorPulse 1.5s ease-in-out infinite;
+}
+
+.reactor-core span {
+    font-size: 48px;
+    text-shadow: 0 0 15px #ffffff;
+}
+
+.arc-reactor-section h2 {
+    letter-spacing: 6px;
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #008cff,
+        0 0 45px #00eaff;
+}
+
+.arc-reactor-section {
+    padding-top: 65px;
+    padding-bottom: 55px;
+}
+
+/* ==================================
+   JARVIS V3.5 - HOLOGRAPHIC METERS
+================================== */
+
+.holo-meter {
+    width: 100%;
+    height: 12px;
+    margin: 18px 0 12px;
+    background: rgba(0, 234, 255, 0.10);
+    border: 1px solid rgba(0, 234, 255, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px #00eaff22;
+}
+
+.holo-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #087cff,
+        #00eaff,
+        #ffffff
+    );
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #087cff;
+    transition: width 0.7s ease;
+}
+
+.monitor-card small {
+    color: #8bdcff;
+    letter-spacing: 3px;
+    font-size: 10px;
+    text-shadow: 0 0 8px #00eaff66;
+}
+
+/* ==================================
+   JARVIS V2.5 - NETWORK ACTIVITY
+================================== */
+
+.network-activity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid #00eaff66;
+    border-radius: 10px;
+    background: rgba(0, 234, 255, 0.06);
+    color: #8bdcff;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#network-activity-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #888888;
+    box-shadow: 0 0 8px #888888;
+}
+
+#network-activity-dot.transferring {
+    background: #00ff88;
+    box-shadow: 0 0 10px #00ff88, 0 0 25px #00ff88;
+    animation: networkPulse 0.8s infinite alternate;
+}
+
+#network-activity-dot.idle {
+    background: #ffb000;
+    box-shadow: 0 0 10px #ffb000;
+}
+
+@keyframes networkPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+}
