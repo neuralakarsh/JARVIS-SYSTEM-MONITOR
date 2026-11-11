@@ -21,6 +21,14 @@ app = FastAPI(
 )
 
 
+@app.get("/api/health")
+def health():
+    return {
+        "status": "healthy",
+        "message": "JARVIS System Monitor API is running"
+    }
+
+
 @app.get("/api/status")
 def home():
     return {
@@ -56,6 +64,7 @@ def network():
         "speed": get_network_speed()
     }
 
+
 @app.get("/api/gpu")
 def gpu():
     return get_gpu_info()
@@ -74,6 +83,8 @@ def system():
         },
         "gpu": get_gpu_info()
     }
+
+
 app.mount(
     "/",
     StaticFiles(directory="frontend", html=True),
