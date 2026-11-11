@@ -2,6 +2,10 @@
 
 A local system monitoring dashboard built using Python, FastAPI, HTML, CSS, and JavaScript.
 
+## Dashboard Preview
+
+![JARVIS System Monitor dashboard](Screenshot%202026-11-11%20182644.png)
+
 ## Features
 - CPU usage monitoring
 - RAM usage monitoring
@@ -53,6 +57,8 @@ A local system monitoring dashboard built using Python, FastAPI, HTML, CSS, and 
 
    `python -m pip install -r backend\\requirements.txt`
 
+For the full Windows setup and troubleshooting steps, see the [Installation Guide](documentation/INSTALLATION.md).
+
 ## Run the Application
 Start the server:
 
@@ -78,14 +84,10 @@ http://127.0.0.1:8000/docs
 - GET /api/gpu - GPU information
 - GET /api/system - Complete system information
 
-Dashboard:
-
-http://127.0.0.1:8000/
-
 ## Run Tests
 `python -m pytest tests -v`
 
-Latest verified test result: **9 passed, 1 warning**. The warning is a Starlette/httpx deprecation warning and did not cause a test failure.
+Latest locally verified test result: **9 passed, 1 warning**. The warning is a Starlette/httpx deprecation warning and did not cause a test failure.
 
 ## Project Documentation
 - [Installation Guide](documentation/INSTALLATION.md)
