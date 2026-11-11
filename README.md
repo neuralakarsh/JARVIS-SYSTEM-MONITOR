@@ -47,11 +47,11 @@ A local system monitoring dashboard built using Python, FastAPI, HTML, CSS, and 
 
 4. Activate it:
 
-   `.venv\Scripts\activate`
+   `.venv\\Scripts\\activate`
 
 5. Install dependencies:
 
-   `python -m pip install -r backend\requirements.txt`
+   `python -m pip install -r backend\\requirements.txt`
 
 ## Run the Application
 Start the server:
@@ -68,6 +68,7 @@ Interactive API documentation:
 http://127.0.0.1:8000/docs
 
 ### Available API Endpoints
+- GET /api/health - Backend health check
 - GET /api/status - API status
 - GET /api/cpu - CPU usage
 - GET /api/memory - RAM usage
@@ -83,6 +84,12 @@ http://127.0.0.1:8000/
 
 ## Run Tests
 `python -m pytest tests -v`
+
+Latest verified test result: **9 passed, 1 warning**. The warning is a Starlette/httpx deprecation warning and did not cause a test failure.
+
+## Project Documentation
+- [Installation Guide](documentation/INSTALLATION.md)
+- [API Documentation](documentation/API.md)
 
 ## Project Safety
 - Runs locally on localhost.
